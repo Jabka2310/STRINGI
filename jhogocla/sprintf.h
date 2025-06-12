@@ -15,7 +15,7 @@ typedef struct Specifiers{
 
 
 void parse_spec();
-void work_with_str(char *str, );
+void work_with_str(char *str);
 void s21_sprintf(char *buffer/*чтобы скопировать, нужен strncpy() из библиотеки s21_string.h*/, char *str_for_processing, ...);
-void int my_strncmp
+char *my_strncpy(char *dest, const char *src, size_t n);
 #endif 
