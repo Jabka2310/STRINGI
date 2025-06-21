@@ -38,7 +38,7 @@ void work_with_str(char *str, char *add_buffer){
 
 void parse_spec(char *add_buffer, int lastInd, Specifiers *spec){
   spec->c = spec->d = spec->f = spec->s = spec->u = false;
-
+  //это можно просто отдельно сделать. здесб не нужен булл
   switch(add_buffer[lastInd]){
     case 'c': 
       spec->c = true;
