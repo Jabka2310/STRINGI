@@ -13,6 +13,11 @@ TCase *tcase_s21_memset(void);
 TCase *tcase_s21_strncat(void);
 TCase *tcase_s21_strchr(void);
 TCase *tcase_s21_strcspn(void);
+TCase *tcase_s21_strpbrk(void);
+TCase *tcase_s21_strrchr(void);
+TCase *tcase_s21_strstr(void);
+TCase *tcase_s21_strtok(void);
+TCase *tcase_s21_strerror(void);
 
 
 START_TEST(test_s21_strlen_1) {
@@ -824,6 +829,453 @@ START_TEST(test_s21_strcspn_11) {
 END_TEST
 // -----------------------------------------------------
 
+START_TEST(test_s21_strpbrk_1) {
+  char *str1 = "Hello, world!";
+  char *str2 = "H";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strpbrk_2) {
+  char *str1 = "Hello, world!";
+  char *str2 = "Hw";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+
+END_TEST
+
+START_TEST(test_s21_strpbrk_3) {
+  char *str1 = "Hello, world!";
+  char *str2 = "eo";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strpbrk_4) {
+  char *str1 = "Hello, world!";
+  char *str2 = "l";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strpbrk_5) {
+  char *str1 = "Hello, world!";
+  char *str2 = "lo";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strpbrk_6) {
+  char *str1 = "Hello, world!";
+  char *str2 = "qaz";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strpbrk_7) {
+  char *str1 = "Hello, world!";
+  char *str2 = "";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strpbrk_8) {
+  char *str1 = "";
+  char *str2 = "H";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strpbrk_9) {
+  char *str1 = "\\\"\'\?\n\t";
+  char *str2 = "\'";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strpbrk_10) {
+  char *str1 = "Hello, world!";
+  char *str2 = "\\\"\'\?\n\t";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strpbrk_11) {
+  char *str1 = "";
+  char *str2 = "\\\"\'\?\n\t";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strpbrk_12) {
+  char *str1 = "";
+  char *str2 = "";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strpbrk_13) {
+  char *str1 = "Hello,\0 world!";
+  char *str2 = "wo";
+  ck_assert_ptr_eq(s21_strpbrk(str1, str2), strpbrk(str1, str2));
+}
+END_TEST
+// -----------------------------------------------------
+
+START_TEST(test_s21_strrchr_1) {
+  char *str = "Hello, world!";
+  int c = '!';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_2) {
+  char *str = "Hello, world!";
+  int c = 'l';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_3) {
+  char *str = "Hello, world!";
+  int c = 'H';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_4) {
+  char *str = "Hello, world!";
+  int c = 'o';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_5) {
+  char *str = "Hello, world!";
+  int c = 'q';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_6) {
+  char *str = "Hello, world!";
+  int c = '\0';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_7) {
+  char *str = "Hello, world";
+  int c = 'd';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_8) {
+  char *str = "H";
+  int c = 'H';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_9) {
+  char *str = "";
+  int c = 'H';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_10) {
+  char *str = "Hello, world!";
+  int c = 'a';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_11) {
+  char *str = "Hello";
+  int c = 'l';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_12) {
+  char *str = "Hello,\0 world!";
+  int c = '\0';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+
+START_TEST(test_s21_strrchr_13) {
+  char *str = "\\\"\'\?\n\t";
+  int c = '\'';
+  ck_assert_ptr_eq(s21_strrchr(str, c), strrchr(str, c));
+}
+END_TEST
+// -----------------------------------------------------
+
+START_TEST(test_s21_strstr_1) {
+  char *str1 = "Hello, world!";
+  char *str2 = "world";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_2) {
+  char *str1 = "Hello, world!";
+  char *str2 = "Hello, ";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_3) {
+  char *str1 = "Hello, world!";
+  char *str2 = "friend";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_4) {
+  char *str1 = "Hello, world!";
+  char *str2 = "";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_5) {
+  char *str1 = "Hello, world!";
+  char *str2 = "ld!";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_6) {
+  char *str1 = "Hello, world!";
+  char *str2 = "Hello, world!";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_7) {
+  char *str1 = "\\\"\'\?\n\t";
+  char *str2 = "\t";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_8) {
+  char *str1 = "Hello, world!";
+  char *str2 = "\t";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_9) {
+  char *str1 = "";
+  char *str2 = "Hello";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_10) {
+  char *str1 = "Hello, world!";
+  char *str2 = "";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_11) {
+  char *str1 = "Hello, world!";
+  char *str2 = "qaz";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_12) {
+  char *str1 = "";
+  char *str2 = "";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+
+START_TEST(test_s21_strstr_13) {
+  char *str1 = "Hello,\0 world!";
+  char *str2 = "world";
+  ck_assert_ptr_eq(s21_strstr(str1, str2), strstr(str1, str2));
+}
+END_TEST
+// -----------------------------------------------------
+
+#define MAX_DELIM 100
+#define MAX_DELIM_LENGTH 50
+
+int delim_string(const char *input_str, char delim[], char delim1[][MAX_DELIM_LENGTH]) {
+  int count = 0;
+  char str_copy[strlen(input_str) + 1];
+  strcpy(str_copy, input_str);
+
+  char *result = strtok(str_copy, delim);
+  while (result != NULL && count < MAX_DELIM) {
+      strncpy(delim1[count], result, MAX_DELIM_LENGTH - 1);
+      delim1[count][MAX_DELIM_LENGTH - 1] = '\0';
+      count++;
+      result = strtok(NULL, delim);
+  }
+  return count;
+}
+
+START_TEST(test_s21_strtok_1) {
+
+  char str1[] = "Hello, world! Hello, world!";
+  char str2[] = "Hello, world! Hello, world!";
+  char delim[] = " ";
+  char delim1[MAX_DELIM][MAX_DELIM_LENGTH];
+  char delim2[MAX_DELIM][MAX_DELIM_LENGTH];
+  int count;
+
+  count = delim_string(str1, delim, delim1);
+  count = delim_string(str2, delim, delim2);
+
+  for (int i = 0; i < count; i++) {
+    ck_assert_str_eq(delim1[i], delim2[i]);
+  }
+}
+END_TEST
+
+START_TEST(test_s21_strtok_2) {
+
+  char str1[] = "Hello, world! Hello, world!";
+  char str2[] = "Hello, world! Hello, world!";
+  char *delim = " ,.!";
+  char delim1[MAX_DELIM][MAX_DELIM_LENGTH];
+  char delim2[MAX_DELIM][MAX_DELIM_LENGTH];
+  int count;
+
+  count = delim_string(str1, delim, delim1);
+  count = delim_string(str2, delim, delim2);
+
+  for (int i = 0; i < count; i++) {
+    ck_assert_str_eq(delim1[i], delim2[i]);
+  }
+}
+END_TEST
+
+START_TEST(test_s21_strtok_3) {
+
+  char str1[] = "Hello, world! Hello, world!";
+  char str2[] = "Hello, world! Hello, world!";
+  char *delim = "\\\"\'\?\n\t";
+  char delim1[MAX_DELIM][MAX_DELIM_LENGTH];
+  char delim2[MAX_DELIM][MAX_DELIM_LENGTH];
+  int count;
+
+  count = delim_string(str1, delim, delim1);
+  count = delim_string(str2, delim, delim2);
+
+  for (int i = 0; i < count; i++) {
+    ck_assert_str_eq(delim1[i], delim2[i]);
+  }
+}
+END_TEST
+
+START_TEST(test_s21_strtok_4) {
+  char str1[] = "Hello, world!";
+  char str2[] = "Hello, world!";
+  char *delim = " ";
+  ck_assert_str_eq(s21_strtok(str1, delim), strtok(str2, delim));
+}
+END_TEST
+
+START_TEST(test_s21_strtok_5) {
+  char str1[] = "Hello, world!";
+  char str2[] = "Hello, world!";
+  char *delim = "l ";
+  ck_assert_str_eq(s21_strtok(str1, delim), strtok(str2, delim));
+}
+END_TEST
+
+START_TEST(test_s21_strtok_6) {
+  char str1[] = "\\\"\'\?\n\t";
+  char str2[] = "\\\"\'\?\n\t";
+  char *delim = "\"\n";
+  ck_assert_str_eq(s21_strtok(str1, delim), strtok(str2, delim));
+}
+END_TEST
+
+START_TEST(test_s21_strtok_7) {
+  char str1[] = "Hello, world!";
+  char str2[] = "Hello, world!";
+  char *delim = "\\\"\'\?\n\t";
+  ck_assert_str_eq(s21_strtok(str1, delim), strtok(str2, delim));
+}
+END_TEST
+
+// START_TEST(test_s21_strtok_8) {
+//   char str1[] = "";
+//   char str2[] = "";
+//   char *delim = "";
+//   ck_assert_str_eq(s21_strtok(str1, delim), strtok(str2, delim));
+// }
+// END_TEST
+
+START_TEST(test_s21_strtok_9) {
+  char str1[] = "Hello, world!";
+  char str2[] = "Hello, world!";
+  char *delim = "qaz";
+  ck_assert_str_eq(s21_strtok(str1, delim), strtok(str2, delim));
+}
+END_TEST
+
+START_TEST(test_s21_strtok_10) {
+  char str1[] = "Hello,\0 world!";
+  char str2[] = "Hello,\0 world!";
+  char *delim = "world";
+  ck_assert_str_eq(s21_strtok(str1, delim), strtok(str2, delim));
+}
+END_TEST
+// -----------------------------------------------------
+
+START_TEST(test_s21_strerror_1) {
+  int errnum = 0;
+  ck_assert_str_eq(s21_strerror(errnum), strerror(errnum));
+}
+END_TEST
+
+START_TEST(test_s21_strerror_2) {
+  int errnum = 5;
+  ck_assert_str_eq(s21_strerror(errnum), strerror(errnum));
+}
+END_TEST
+
+START_TEST(test_s21_strerror_3) {
+  int errnum = 23;
+  ck_assert_str_eq(s21_strerror(errnum), strerror(errnum));
+}
+END_TEST
+
+START_TEST(test_s21_strerror_4) {
+  int errnum = -1;
+  ck_assert_str_eq(s21_strerror(errnum), strerror(errnum));
+}
+END_TEST
+START_TEST(test_s21_strerror_5) {
+  int errnum = -5;
+  ck_assert_str_eq(s21_strerror(errnum), strerror(errnum));
+}
+END_TEST
+
+START_TEST(test_s21_strerror_6) {
+  int errnum = 999;
+  ck_assert_str_eq(s21_strerror(errnum), strerror(errnum));
+}
+END_TEST
+
+START_TEST(test_s21_strerror_7) {
+  int errnum = 99999;
+  ck_assert_str_eq(s21_strerror(errnum), strerror(errnum));
+}
+END_TEST
+
 
 int main(void) {
   int failed_count = 0;
@@ -840,6 +1292,8 @@ int main(void) {
 
   return EXIT_SUCCESS;
 }
+// -----------------------------------------------------
+
 
 Suite *s21_suite(void) {
   Suite *suite = suite_create("s21_str");
@@ -854,6 +1308,11 @@ Suite *s21_suite(void) {
   suite_add_tcase(suite, tcase_s21_strncat());
   suite_add_tcase(suite, tcase_s21_strchr());
   suite_add_tcase(suite, tcase_s21_strcspn());
+  suite_add_tcase(suite, tcase_s21_strpbrk());
+  suite_add_tcase(suite, tcase_s21_strrchr());
+  suite_add_tcase(suite, tcase_s21_strstr());
+  suite_add_tcase(suite, tcase_s21_strtok());
+  suite_add_tcase(suite, tcase_s21_strerror());
 
   return suite;
 }
@@ -1005,6 +1464,92 @@ TCase *tcase_s21_strcspn(void) {
   tcase_add_test(tcase, test_s21_strcspn_9);
   tcase_add_test(tcase, test_s21_strcspn_10);
   tcase_add_test(tcase, test_s21_strcspn_11);
+
+  return tcase;
+}
+
+TCase *tcase_s21_strpbrk(void) {
+  TCase *tcase = tcase_create("test_s21_strpbrk");
+  tcase_add_test(tcase, test_s21_strpbrk_1);
+  tcase_add_test(tcase, test_s21_strpbrk_2);
+  tcase_add_test(tcase, test_s21_strpbrk_3);
+  tcase_add_test(tcase, test_s21_strpbrk_4);
+  tcase_add_test(tcase, test_s21_strpbrk_5);
+  tcase_add_test(tcase, test_s21_strpbrk_6);
+  tcase_add_test(tcase, test_s21_strpbrk_7);
+  tcase_add_test(tcase, test_s21_strpbrk_8);
+  tcase_add_test(tcase, test_s21_strpbrk_9);
+  tcase_add_test(tcase, test_s21_strpbrk_10);
+  tcase_add_test(tcase, test_s21_strpbrk_11);
+  tcase_add_test(tcase, test_s21_strpbrk_12);
+  tcase_add_test(tcase, test_s21_strpbrk_13);
+
+  return tcase;
+}
+
+TCase *tcase_s21_strrchr(void) {
+  TCase *tcase = tcase_create("test_s21_strrchr");
+  tcase_add_test(tcase, test_s21_strrchr_1);
+  tcase_add_test(tcase, test_s21_strrchr_2);
+  tcase_add_test(tcase, test_s21_strrchr_3);
+  tcase_add_test(tcase, test_s21_strrchr_4);
+  tcase_add_test(tcase, test_s21_strrchr_5);
+  tcase_add_test(tcase, test_s21_strrchr_6);
+  tcase_add_test(tcase, test_s21_strrchr_7);
+  tcase_add_test(tcase, test_s21_strrchr_8);
+  tcase_add_test(tcase, test_s21_strrchr_9);
+  tcase_add_test(tcase, test_s21_strrchr_10);
+  tcase_add_test(tcase, test_s21_strrchr_11);
+  tcase_add_test(tcase, test_s21_strrchr_12);
+  tcase_add_test(tcase, test_s21_strrchr_13);
+
+  return tcase;
+}
+
+TCase *tcase_s21_strstr(void) {
+  TCase *tcase = tcase_create("test_s21_strstr");
+  tcase_add_test(tcase, test_s21_strstr_1);
+  tcase_add_test(tcase, test_s21_strstr_2);
+  tcase_add_test(tcase, test_s21_strstr_3);
+  tcase_add_test(tcase, test_s21_strstr_4);
+  tcase_add_test(tcase, test_s21_strstr_5);
+  tcase_add_test(tcase, test_s21_strstr_6);
+  tcase_add_test(tcase, test_s21_strstr_7);
+  tcase_add_test(tcase, test_s21_strstr_8);
+  tcase_add_test(tcase, test_s21_strstr_9);
+  tcase_add_test(tcase, test_s21_strstr_10);
+  tcase_add_test(tcase, test_s21_strstr_11);
+  tcase_add_test(tcase, test_s21_strstr_12);
+  tcase_add_test(tcase, test_s21_strstr_13);
+
+  return tcase;
+}
+
+TCase *tcase_s21_strtok(void) {
+  TCase *tcase = tcase_create("test_s21_strtok");
+  tcase_add_test(tcase, test_s21_strtok_1);
+  tcase_add_test(tcase, test_s21_strtok_2);
+  tcase_add_test(tcase, test_s21_strtok_3);
+  tcase_add_test(tcase, test_s21_strtok_4);
+  tcase_add_test(tcase, test_s21_strtok_5);
+  tcase_add_test(tcase, test_s21_strtok_6);
+  tcase_add_test(tcase, test_s21_strtok_7);
+  // tcase_add_test(tcase, test_s21_strtok_8);
+  tcase_add_test(tcase, test_s21_strtok_9);
+  tcase_add_test(tcase, test_s21_strtok_10);
+
+  return tcase;
+}
+
+TCase *tcase_s21_strerror(void) {
+  TCase *tcase = tcase_create("s21_strerror");
+  tcase_add_test(tcase, test_s21_strerror_1);
+  tcase_add_test(tcase, test_s21_strerror_2);
+  tcase_add_test(tcase, test_s21_strerror_3);
+  tcase_add_test(tcase, test_s21_strerror_4);
+  tcase_add_test(tcase, test_s21_strerror_5);
+  tcase_add_test(tcase, test_s21_strerror_6);
+  tcase_add_test(tcase, test_s21_strerror_7);
 
   return tcase;
 }

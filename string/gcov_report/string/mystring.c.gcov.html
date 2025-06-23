@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
-            <td class="headerCovTableEntry">81</td>
-            <td class="headerCovTableEntry">81</td>
+            <td class="headerCovTableEntryHi">98.6&nbsp;%</td>
+            <td class="headerCovTableEntry">139</td>
+            <td class="headerCovTableEntry">137</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2025-06-21 21:14:03</td>
+            <td class="headerValue">2025-06-24 00:12:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
-            <td class="headerCovTableEntry">10</td>
-            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry">15</td>
+            <td class="headerCovTableEntry">15</td>
           </tr>
                   <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
                 </table>
@@ -62,304 +62,555 @@
 <pre class="source">
 <span id="L1"><span class="lineNum">       1</span>              : #include &quot;mystring.h&quot;</span>
 <span id="L2"><span class="lineNum">       2</span>              : </span>
-<span id="L3"><span class="lineNum">       3</span> <span class="tlaGNC tlaBgGNC">         135 : s21_size_t s21_strlen(</span></span>
+<span id="L3"><span class="lineNum">       3</span> <span class="tlaGNC tlaBgGNC">          63 : s21_size_t s21_strlen(</span></span>
 <span id="L4"><span class="lineNum">       4</span>              :     const char *str) {  // Считает длинну строки, возвращает ее в s21_size_t</span>
-<span id="L5"><span class="lineNum">       5</span> <span class="tlaGNC">         135 :   s21_size_t lenght = 0;</span></span>
-<span id="L6"><span class="lineNum">       6</span> <span class="tlaGNC">       16185 :   while (*str != '\0') {</span></span>
-<span id="L7"><span class="lineNum">       7</span> <span class="tlaGNC">       16050 :     lenght++;</span></span>
-<span id="L8"><span class="lineNum">       8</span> <span class="tlaGNC">       16050 :     str++;</span></span>
+<span id="L5"><span class="lineNum">       5</span> <span class="tlaGNC">          63 :   s21_size_t lenght = 0;</span></span>
+<span id="L6"><span class="lineNum">       6</span> <span class="tlaGNC">        7553 :   while (*str != '\0') {</span></span>
+<span id="L7"><span class="lineNum">       7</span> <span class="tlaGNC">        7490 :     lenght++;</span></span>
+<span id="L8"><span class="lineNum">       8</span> <span class="tlaGNC">        7490 :     str++;</span></span>
 <span id="L9"><span class="lineNum">       9</span>              :   }</span>
-<span id="L10"><span class="lineNum">      10</span> <span class="tlaGNC">         135 :   return lenght;</span></span>
+<span id="L10"><span class="lineNum">      10</span> <span class="tlaGNC">          63 :   return lenght;</span></span>
 <span id="L11"><span class="lineNum">      11</span>              : }</span>
 <span id="L12"><span class="lineNum">      12</span>              : // ------------------------------------------------------------------------------------------------</span>
-<span id="L13"><span class="lineNum">      13</span> <span class="tlaGNC">         105 : char *s21_strncpy(</span></span>
+<span id="L13"><span class="lineNum">      13</span> <span class="tlaGNC">          49 : char *s21_strncpy(</span></span>
 <span id="L14"><span class="lineNum">      14</span>              :     char *dest, const char *src,</span>
 <span id="L15"><span class="lineNum">      15</span>              :     s21_size_t n) {  // Копирует строку src в dest, возвращает dest</span>
-<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">         105 :   char *result = dest;</span></span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         105 :   s21_size_t i = 0;</span></span>
+<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">          49 :   char *result = dest;</span></span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">          49 :   s21_size_t i = 0;</span></span>
 <span id="L18"><span class="lineNum">      18</span>              : </span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         720 :   while (i &lt; n &amp;&amp; *src != '\0') {</span></span>
-<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         615 :     *dest = *src;</span></span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         615 :     dest++;</span></span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         615 :     src++;</span></span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         615 :     i++;</span></span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         336 :   while (i &lt; n &amp;&amp; *src != '\0') {</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         287 :     *dest = *src;</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         287 :     dest++;</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         287 :     src++;</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         287 :     i++;</span></span>
 <span id="L24"><span class="lineNum">      24</span>              :   }</span>
 <span id="L25"><span class="lineNum">      25</span>              : </span>
-<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">         210 :   while (i &lt; n) {</span></span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         105 :     *dest = '\0';</span></span>
-<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         105 :     dest++;</span></span>
-<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         105 :     i++;</span></span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">          98 :   while (i &lt; n) {</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">          49 :     *dest = '\0';</span></span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">          49 :     dest++;</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">          49 :     i++;</span></span>
 <span id="L30"><span class="lineNum">      30</span>              :   }</span>
 <span id="L31"><span class="lineNum">      31</span>              : </span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         105 :   return result;</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">          49 :   return result;</span></span>
 <span id="L33"><span class="lineNum">      33</span>              : }</span>
 <span id="L34"><span class="lineNum">      34</span>              : // ------------------------------------------------------------------------------------------------</span>
-<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">         150 : int s21_strncmp(const char *str1, const char *str2,</span></span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">          70 : int s21_strncmp(const char *str1, const char *str2,</span></span>
 <span id="L36"><span class="lineNum">      36</span>              :                 s21_size_t n) {  // Сравнивает две строки, возвращает 0 если они</span>
 <span id="L37"><span class="lineNum">      37</span>              :                                  // равны, 1 если</span>
 <span id="L38"><span class="lineNum">      38</span>              :   // первая больше, -1 если вторая больше</span>
-<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">         150 :   int result = 0;</span></span>
-<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">         150 :   s21_size_t i = 0;</span></span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">          70 :   int result = 0;</span></span>
+<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">          70 :   s21_size_t i = 0;</span></span>
 <span id="L41"><span class="lineNum">      41</span>              : </span>
-<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">         675 :   while (i &lt; n &amp;&amp; str1[i] != '\0' &amp;&amp; str2[i] != '\0' &amp;&amp; result == 0) {</span></span>
-<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">         525 :     result = (unsigned char)str1[i] - (unsigned char)str2[i];</span></span>
-<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">         525 :     i++;</span></span>
+<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">         315 :   while (i &lt; n &amp;&amp; str1[i] != '\0' &amp;&amp; str2[i] != '\0' &amp;&amp; result == 0) {</span></span>
+<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">         245 :     result = (unsigned char)str1[i] - (unsigned char)str2[i];</span></span>
+<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">         245 :     i++;</span></span>
 <span id="L45"><span class="lineNum">      45</span>              :   }</span>
 <span id="L46"><span class="lineNum">      46</span>              : </span>
-<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">         150 :   if (result == 0 &amp;&amp; i &lt; n) {</span></span>
-<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">          15 :     result = (unsigned char)str1[i] - (unsigned char)str2[i];</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">          70 :   if (result == 0 &amp;&amp; i &lt; n) {</span></span>
+<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">           7 :     result = (unsigned char)str1[i] - (unsigned char)str2[i];</span></span>
 <span id="L49"><span class="lineNum">      49</span>              :   }</span>
 <span id="L50"><span class="lineNum">      50</span>              : </span>
-<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">         150 :   return result;</span></span>
+<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">          70 :   return result;</span></span>
 <span id="L52"><span class="lineNum">      52</span>              : }</span>
 <span id="L53"><span class="lineNum">      53</span>              : // ------------------------------------------------------------------------------------------------</span>
-<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">         195 : void *s21_memchr(</span></span>
+<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">          91 : void *s21_memchr(</span></span>
 <span id="L55"><span class="lineNum">      55</span>              :     const void *str, int c,</span>
 <span id="L56"><span class="lineNum">      56</span>              :     s21_size_t n) {  // Ищет первое вхождение символа c в строку str, возвращает</span>
 <span id="L57"><span class="lineNum">      57</span>              :   // указатель на этот символ или S21_NULL если символ не найден</span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         195 :   void *result = S21_NULL;</span></span>
-<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">         195 :   const unsigned char *p = (const unsigned char *)str;</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">          91 :   void *result = S21_NULL;</span></span>
+<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">          91 :   const unsigned char *p = (const unsigned char *)str;</span></span>
 <span id="L60"><span class="lineNum">      60</span>              : </span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">        1395 :   while (n-- &gt; 0 &amp;&amp; result == S21_NULL) {</span></span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">        1200 :     if (*p == (unsigned char)c) {</span></span>
-<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">         105 :       result = (void *)p;</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">         651 :   while (n-- &gt; 0 &amp;&amp; result == S21_NULL) {</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">         560 :     if (*p == (unsigned char)c) {</span></span>
+<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">          49 :       result = (void *)p;</span></span>
 <span id="L64"><span class="lineNum">      64</span>              :     }</span>
-<span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">        1200 :     p++;</span></span>
+<span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">         560 :     p++;</span></span>
 <span id="L66"><span class="lineNum">      66</span>              :   }</span>
 <span id="L67"><span class="lineNum">      67</span>              : </span>
-<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">         195 :   return result;</span></span>
+<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">          91 :   return result;</span></span>
 <span id="L69"><span class="lineNum">      69</span>              : }</span>
 <span id="L70"><span class="lineNum">      70</span>              : // ------------------------------------------------------------------------------------------------</span>
-<span id="L71"><span class="lineNum">      71</span> <span class="tlaGNC">         105 : int s21_memcmp(const void *str1, const void *str2,</span></span>
+<span id="L71"><span class="lineNum">      71</span> <span class="tlaGNC">          49 : int s21_memcmp(const void *str1, const void *str2,</span></span>
 <span id="L72"><span class="lineNum">      72</span>              :                s21_size_t n) {  // Сравнивает две области памяти, возвращает 0</span>
 <span id="L73"><span class="lineNum">      73</span>              :                                 // если они равны,</span>
 <span id="L74"><span class="lineNum">      74</span>              :   // 1 если первая больше, -1 если вторая больше</span>
-<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">         105 :   int result = 0;</span></span>
-<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">         105 :   const unsigned char *p1 = (const unsigned char *)str1;</span></span>
-<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">         105 :   const unsigned char *p2 = (const unsigned char *)str2;</span></span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">          49 :   int result = 0;</span></span>
+<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">          49 :   const unsigned char *p1 = (const unsigned char *)str1;</span></span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">          49 :   const unsigned char *p2 = (const unsigned char *)str2;</span></span>
 <span id="L78"><span class="lineNum">      78</span>              : </span>
-<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">         420 :   while (n-- &gt; 0 &amp;&amp; result == 0) {</span></span>
-<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">         315 :     result = *p1 - *p2;</span></span>
-<span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">         315 :     p1++;</span></span>
-<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">         315 :     p2++;</span></span>
+<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">         196 :   while (n-- &gt; 0 &amp;&amp; result == 0) {</span></span>
+<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">         147 :     result = *p1 - *p2;</span></span>
+<span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">         147 :     p1++;</span></span>
+<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">         147 :     p2++;</span></span>
 <span id="L83"><span class="lineNum">      83</span>              :   }</span>
 <span id="L84"><span class="lineNum">      84</span>              : </span>
-<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">         105 :   return result;</span></span>
+<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">          49 :   return result;</span></span>
 <span id="L86"><span class="lineNum">      86</span>              : }</span>
 <span id="L87"><span class="lineNum">      87</span>              : // ------------------------------------------------------------------------------------------------</span>
-<span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">         105 : void *s21_memcpy(</span></span>
+<span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">          49 : void *s21_memcpy(</span></span>
 <span id="L89"><span class="lineNum">      89</span>              :     void *dest, const void *src,</span>
 <span id="L90"><span class="lineNum">      90</span>              :     s21_size_t n) {  // Копирует n байт из src в dest, возвращает dest</span>
-<span id="L91"><span class="lineNum">      91</span> <span class="tlaGNC">         105 :   char *d = (char *)dest;</span></span>
-<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">         105 :   const char *s = (const char *)src;</span></span>
+<span id="L91"><span class="lineNum">      91</span> <span class="tlaGNC">          49 :   char *d = (char *)dest;</span></span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">          49 :   const char *s = (const char *)src;</span></span>
 <span id="L93"><span class="lineNum">      93</span>              : </span>
-<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">         420 :   while (n--) {</span></span>
-<span id="L95"><span class="lineNum">      95</span> <span class="tlaGNC">         315 :     *d++ = *s++;  // Порядок операций смотри ниже</span></span>
+<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">         196 :   while (n--) {</span></span>
+<span id="L95"><span class="lineNum">      95</span> <span class="tlaGNC">         147 :     *d++ = *s++;  // Порядок операций смотри ниже</span></span>
 <span id="L96"><span class="lineNum">      96</span>              :   }</span>
 <span id="L97"><span class="lineNum">      97</span>              :   //*d = *s;  Копирование байта из *s в *d</span>
 <span id="L98"><span class="lineNum">      98</span>              :   // d++;     Увеличение указателя dest</span>
 <span id="L99"><span class="lineNum">      99</span>              :   // s++;     Увеличение указателя src</span>
-<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">         105 :   return dest;</span></span>
+<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">          49 :   return dest;</span></span>
 <span id="L101"><span class="lineNum">     101</span>              : }</span>
 <span id="L102"><span class="lineNum">     102</span>              : // ------------------------------------------------------------------------------------------------</span>
-<span id="L103"><span class="lineNum">     103</span> <span class="tlaGNC">         195 : void *s21_memset(void *str, int c,</span></span>
+<span id="L103"><span class="lineNum">     103</span> <span class="tlaGNC">          91 : void *s21_memset(void *str, int c,</span></span>
 <span id="L104"><span class="lineNum">     104</span>              :                  s21_size_t n) {  // Заполняет память символом c, возвращает str</span>
-<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">         195 :   char *p = (char *)str;</span></span>
-<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">       16170 :   while (n--) {</span></span>
-<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">       15975 :     *p++ = (char)c;  // ВАЖНО!!!!</span></span>
+<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">          91 :   char *p = (char *)str;</span></span>
+<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">        7546 :   while (n--) {</span></span>
+<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">        7455 :     *p++ = (char)c;  // ВАЖНО!!!!</span></span>
 <span id="L108"><span class="lineNum">     108</span>              :     // Не работает с *str, работает только с str[]</span>
 <span id="L109"><span class="lineNum">     109</span>              :     // Так как первое хранится в другой области памяти, а не в стеке</span>
 <span id="L110"><span class="lineNum">     110</span>              :     //  Так же если использовать тип int, то будет ошибка, так как int занимает</span>
 <span id="L111"><span class="lineNum">     111</span>              :     //  4 байта, а char 1 байт Помимо прочего, если задать 10 байт, и задать их</span>
 <span id="L112"><span class="lineNum">     112</span>              :     //  нулями - то зачиститься 3 целых байта вместо 2.5</span>
 <span id="L113"><span class="lineNum">     113</span>              :   }</span>
-<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">         195 :   return str;</span></span>
+<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">          91 :   return str;</span></span>
 <span id="L115"><span class="lineNum">     115</span>              : }</span>
 <span id="L116"><span class="lineNum">     116</span>              : // ------------------------------------------------------------------------------------------------</span>
-<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">         135 : char *s21_strncat(char *dest, const char *src,</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">          63 : char *s21_strncat(char *dest, const char *src,</span></span>
 <span id="L118"><span class="lineNum">     118</span>              :                   s21_size_t n) {  // Конкатенирует две строки, возвращает dest</span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">         135 :   char *d = dest;</span></span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">          63 :   char *d = dest;</span></span>
 <span id="L120"><span class="lineNum">     120</span>              : </span>
 <span id="L121"><span class="lineNum">     121</span>              :   // Доходим до конца строки</span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">        1065 :   while (*d != '\0') {</span></span>
-<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">         930 :     d++;</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">         497 :   while (*d != '\0') {</span></span>
+<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">         434 :     d++;</span></span>
 <span id="L124"><span class="lineNum">     124</span>              :   }</span>
 <span id="L125"><span class="lineNum">     125</span>              : </span>
 <span id="L126"><span class="lineNum">     126</span>              :   // Копируем не более n символов</span>
-<span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">         540 :   while (n &gt; 0 &amp;&amp; *src != '\0') {</span></span>
-<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">         405 :     *d++ = *src++;</span></span>
-<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">         405 :     n--;</span></span>
+<span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">         252 :   while (n &gt; 0 &amp;&amp; *src != '\0') {</span></span>
+<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">         189 :     *d++ = *src++;</span></span>
+<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">         189 :     n--;</span></span>
 <span id="L130"><span class="lineNum">     130</span>              :   }</span>
 <span id="L131"><span class="lineNum">     131</span>              : </span>
 <span id="L132"><span class="lineNum">     132</span>              :   // Добавляем завершающий нуль</span>
-<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">         135 :   *d = '\0';</span></span>
+<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">          63 :   *d = '\0';</span></span>
 <span id="L134"><span class="lineNum">     134</span>              : </span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">         135 :   return dest;</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">          63 :   return dest;</span></span>
 <span id="L136"><span class="lineNum">     136</span>              : }</span>
 <span id="L137"><span class="lineNum">     137</span>              : // ------------------------------------------------------------------------------------------------</span>
-<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">         696 : char *s21_strchr(</span></span>
+<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">         896 : char *s21_strchr(</span></span>
 <span id="L139"><span class="lineNum">     139</span>              :     const char *str,</span>
 <span id="L140"><span class="lineNum">     140</span>              :     int c) {  // Ищет первое вхождение символа c в строку str, возвращает</span>
 <span id="L141"><span class="lineNum">     141</span>              :               // указатель на этот символ или S21_NULL если символ не найден</span>
-<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">         696 :   char *result = S21_NULL;</span></span>
+<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">         896 :   char *result = S21_NULL;</span></span>
 <span id="L143"><span class="lineNum">     143</span>              : </span>
-<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">        3731 :   while (*str != '\0' &amp;&amp; result == S21_NULL) {</span></span>
-<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">        3035 :     if (*str == (unsigned char)c) {</span></span>
-<span id="L146"><span class="lineNum">     146</span> <span class="tlaGNC">          92 :       result = (char *)str;</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">        4242 :   while (*str != '\0' &amp;&amp; result == S21_NULL) {</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">        3346 :     if (*str == (unsigned char)c) {</span></span>
+<span id="L146"><span class="lineNum">     146</span> <span class="tlaGNC">          84 :       result = (char *)str;</span></span>
 <span id="L147"><span class="lineNum">     147</span>              :     }</span>
-<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">        3035 :     str++;</span></span>
+<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">        3346 :     str++;</span></span>
 <span id="L149"><span class="lineNum">     149</span>              :   }</span>
 <span id="L150"><span class="lineNum">     150</span>              : </span>
-<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">         696 :   if (result == S21_NULL &amp;&amp; (unsigned char)c == '\0') {</span></span>
-<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">          30 :     result = (char *)str;</span></span>
+<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">         896 :   if (result == S21_NULL &amp;&amp; (unsigned char)c == '\0') {</span></span>
+<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">          14 :     result = (char *)str;</span></span>
 <span id="L153"><span class="lineNum">     153</span>              :   }</span>
 <span id="L154"><span class="lineNum">     154</span>              : </span>
-<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">         696 :   return result;</span></span>
+<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">         896 :   return result;</span></span>
 <span id="L156"><span class="lineNum">     156</span>              : }</span>
 <span id="L157"><span class="lineNum">     157</span>              : // ------------------------------------------------------------------------------------------------</span>
-<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">          88 : s21_size_t s21_strcspn(</span></span>
+<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">          77 : s21_size_t s21_strcspn(</span></span>
 <span id="L159"><span class="lineNum">     159</span>              :     const char *str1,</span>
 <span id="L160"><span class="lineNum">     160</span>              :     const char *str2) {  // Ищет первое вхождение символа из str2 в str1,</span>
 <span id="L161"><span class="lineNum">     161</span>              :                          // возвращает количество символов до этого вхождения</span>
-<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">          88 :   s21_size_t result = 0;</span></span>
-<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">          88 :   const char *p1 = str1;</span></span>
+<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">          77 :   s21_size_t result = 0;</span></span>
+<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">          77 :   const char *p1 = str1;</span></span>
 <span id="L164"><span class="lineNum">     164</span>              : </span>
-<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">         587 :   while (*p1 != '\0' &amp;&amp; s21_strchr(str2, *p1) == S21_NULL) {</span></span>
-<span id="L166"><span class="lineNum">     166</span> <span class="tlaGNC">         499 :     p1++;</span></span>
-<span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">         499 :     result++;</span></span>
+<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">         539 :   while (*p1 != '\0' &amp;&amp; s21_strchr(str2, *p1) == S21_NULL) {</span></span>
+<span id="L166"><span class="lineNum">     166</span> <span class="tlaGNC">         462 :     p1++;</span></span>
+<span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">         462 :     result++;</span></span>
 <span id="L168"><span class="lineNum">     168</span>              :   }</span>
 <span id="L169"><span class="lineNum">     169</span>              : </span>
-<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">          88 :   return result;</span></span>
+<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">          77 :   return result;</span></span>
 <span id="L171"><span class="lineNum">     171</span>              : }</span>
-<span id="L172"><span class="lineNum">     172</span>              : // // ------------------------------------------------------------------------------------------------</span>
-<span id="L173"><span class="lineNum">     173</span>              : // char *s21_strpbrk(</span>
-<span id="L174"><span class="lineNum">     174</span>              : //     const char *str1,</span>
-<span id="L175"><span class="lineNum">     175</span>              : //     const char *str2) {  // Ищет первое вхождение символа из str2</span>
-<span id="L176"><span class="lineNum">     176</span>              : //                          // в str1, возвращает указатель на этот</span>
-<span id="L177"><span class="lineNum">     177</span>              : //                          // символ или S21_NULL если символ не найден</span>
-<span id="L178"><span class="lineNum">     178</span>              : //   char *result = S21_NULL;</span>
+<span id="L172"><span class="lineNum">     172</span>              : // ------------------------------------------------------------------------------------------------</span>
+<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">          91 : char *s21_strpbrk(</span></span>
+<span id="L174"><span class="lineNum">     174</span>              :     const char *str1,</span>
+<span id="L175"><span class="lineNum">     175</span>              :     const char *str2) {  // Ищет первое вхождение символа из str2</span>
+<span id="L176"><span class="lineNum">     176</span>              :                          // в str1, возвращает указатель на этот</span>
+<span id="L177"><span class="lineNum">     177</span>              :                          // символ или S21_NULL если символ не найден</span>
+<span id="L178"><span class="lineNum">     178</span> <span class="tlaGNC">          91 :   char *result = S21_NULL;</span></span>
 <span id="L179"><span class="lineNum">     179</span>              : </span>
-<span id="L180"><span class="lineNum">     180</span>              : //   while (*str1 != '\0' &amp;&amp; result == S21_NULL) {</span>
-<span id="L181"><span class="lineNum">     181</span>              : //     const char *p2 = str2;</span>
-<span id="L182"><span class="lineNum">     182</span>              : //     while (*p2 != '\0' &amp;&amp; result == S21_NULL) {</span>
-<span id="L183"><span class="lineNum">     183</span>              : //       if (*str1 == *p2) {</span>
-<span id="L184"><span class="lineNum">     184</span>              : //         result = (char *)str1;</span>
-<span id="L185"><span class="lineNum">     185</span>              : //       }</span>
-<span id="L186"><span class="lineNum">     186</span>              : //       p2++;</span>
-<span id="L187"><span class="lineNum">     187</span>              : //     }</span>
-<span id="L188"><span class="lineNum">     188</span>              : //     str1++;</span>
-<span id="L189"><span class="lineNum">     189</span>              : //   }</span>
+<span id="L180"><span class="lineNum">     180</span> <span class="tlaGNC">         490 :   while (*str1 != '\0' &amp;&amp; result == S21_NULL) {</span></span>
+<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">         399 :     const char *p2 = str2;</span></span>
+<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">        1400 :     while (*p2 != '\0' &amp;&amp; result == S21_NULL) {</span></span>
+<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">        1001 :       if (*str1 == *p2) {</span></span>
+<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">          49 :         result = (char *)str1;</span></span>
+<span id="L185"><span class="lineNum">     185</span>              :       }</span>
+<span id="L186"><span class="lineNum">     186</span> <span class="tlaGNC">        1001 :       p2++;</span></span>
+<span id="L187"><span class="lineNum">     187</span>              :     }</span>
+<span id="L188"><span class="lineNum">     188</span> <span class="tlaGNC">         399 :     str1++;</span></span>
+<span id="L189"><span class="lineNum">     189</span>              :   }</span>
 <span id="L190"><span class="lineNum">     190</span>              : </span>
-<span id="L191"><span class="lineNum">     191</span>              : //   return result;</span>
-<span id="L192"><span class="lineNum">     192</span>              : // }</span>
-<span id="L193"><span class="lineNum">     193</span>              : // // ------------------------------------------------------------------------------------------------</span>
-<span id="L194"><span class="lineNum">     194</span>              : // char *s21_strrchr(</span>
-<span id="L195"><span class="lineNum">     195</span>              : //     const char *str,</span>
-<span id="L196"><span class="lineNum">     196</span>              : //     int c) {  // Ищет последнее вхождение символа c в строку str, возвращает</span>
-<span id="L197"><span class="lineNum">     197</span>              : //               // указатель на этот символ или S21_NULL если символ не найден</span>
-<span id="L198"><span class="lineNum">     198</span>              : //   const char *last = S21_NULL;</span>
+<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">          91 :   return result;</span></span>
+<span id="L192"><span class="lineNum">     192</span>              : }</span>
+<span id="L193"><span class="lineNum">     193</span>              : // ------------------------------------------------------------------------------------------------</span>
+<span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">          91 : char *s21_strrchr(</span></span>
+<span id="L195"><span class="lineNum">     195</span>              :     const char *str,</span>
+<span id="L196"><span class="lineNum">     196</span>              :     int c) {  // Ищет последнее вхождение символа c в строку str, возвращает</span>
+<span id="L197"><span class="lineNum">     197</span>              :               // указатель на этот символ или S21_NULL если символ не найден</span>
+<span id="L198"><span class="lineNum">     198</span> <span class="tlaGNC">          91 :   const char *last = S21_NULL;</span></span>
 <span id="L199"><span class="lineNum">     199</span>              : </span>
-<span id="L200"><span class="lineNum">     200</span>              : //   while (*str != '\0') {</span>
-<span id="L201"><span class="lineNum">     201</span>              : //     if (*str == (unsigned char)c) {</span>
-<span id="L202"><span class="lineNum">     202</span>              : //       last = str;</span>
-<span id="L203"><span class="lineNum">     203</span>              : //     }</span>
-<span id="L204"><span class="lineNum">     204</span>              : //     str++;</span>
-<span id="L205"><span class="lineNum">     205</span>              : //   }</span>
+<span id="L200"><span class="lineNum">     200</span> <span class="tlaGNC">         938 :   while (*str != '\0') {</span></span>
+<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">         847 :     if (*str == (unsigned char)c) {</span></span>
+<span id="L202"><span class="lineNum">     202</span> <span class="tlaGNC">          84 :       last = str;</span></span>
+<span id="L203"><span class="lineNum">     203</span>              :     }</span>
+<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">         847 :     str++;</span></span>
+<span id="L205"><span class="lineNum">     205</span>              :   }</span>
 <span id="L206"><span class="lineNum">     206</span>              : </span>
-<span id="L207"><span class="lineNum">     207</span>              : //   if ((unsigned char)c == '\0') {</span>
-<span id="L208"><span class="lineNum">     208</span>              : //     last = str;</span>
-<span id="L209"><span class="lineNum">     209</span>              : //   }</span>
+<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">          91 :   if ((unsigned char)c == '\0') {</span></span>
+<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">          14 :     last = str;</span></span>
+<span id="L209"><span class="lineNum">     209</span>              :   }</span>
 <span id="L210"><span class="lineNum">     210</span>              : </span>
-<span id="L211"><span class="lineNum">     211</span>              : //   return (char *)last;</span>
-<span id="L212"><span class="lineNum">     212</span>              : // }</span>
-<span id="L213"><span class="lineNum">     213</span>              : // // ------------------------------------------------------------------------------------------------</span>
-<span id="L214"><span class="lineNum">     214</span>              : // char *s21_strstr(</span>
-<span id="L215"><span class="lineNum">     215</span>              : //     const char *haystack,</span>
-<span id="L216"><span class="lineNum">     216</span>              : //     const char *needle) {  // Ищет первое вхождение строки needle в строку</span>
-<span id="L217"><span class="lineNum">     217</span>              : //                            // haystack, возвращает указатель на это вхождение</span>
-<span id="L218"><span class="lineNum">     218</span>              : //                            // или S21_NULL если оно не найдено</span>
-<span id="L219"><span class="lineNum">     219</span>              : //   char *result = S21_NULL;</span>
+<span id="L211"><span class="lineNum">     211</span> <span class="tlaGNC">          91 :   return (char *)last;</span></span>
+<span id="L212"><span class="lineNum">     212</span>              : }</span>
+<span id="L213"><span class="lineNum">     213</span>              : // ------------------------------------------------------------------------------------------------</span>
+<span id="L214"><span class="lineNum">     214</span> <span class="tlaGNC">          91 : char *s21_strstr(</span></span>
+<span id="L215"><span class="lineNum">     215</span>              :     const char *haystack,</span>
+<span id="L216"><span class="lineNum">     216</span>              :     const char *needle) {  // Ищет первое вхождение строки needle в строку</span>
+<span id="L217"><span class="lineNum">     217</span>              :                            // haystack, возвращает указатель на это вхождение</span>
+<span id="L218"><span class="lineNum">     218</span>              :                            // или S21_NULL если оно не найдено</span>
+<span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">          91 :   char *result = S21_NULL;</span></span>
 <span id="L220"><span class="lineNum">     220</span>              : </span>
-<span id="L221"><span class="lineNum">     221</span>              : //   if (*needle == '\0') {</span>
-<span id="L222"><span class="lineNum">     222</span>              : //     result = (char *)haystack;</span>
-<span id="L223"><span class="lineNum">     223</span>              : //   } else {</span>
-<span id="L224"><span class="lineNum">     224</span>              : //     while (*haystack != '\0' &amp;&amp; result == S21_NULL) {</span>
-<span id="L225"><span class="lineNum">     225</span>              : //       const char *p1 = haystack;</span>
-<span id="L226"><span class="lineNum">     226</span>              : //       const char *p2 = needle;</span>
+<span id="L221"><span class="lineNum">     221</span> <span class="tlaGNC">          91 :   if (*needle == '\0') {</span></span>
+<span id="L222"><span class="lineNum">     222</span> <span class="tlaGNC">          21 :     result = (char *)haystack;</span></span>
+<span id="L223"><span class="lineNum">     223</span>              :   } else {</span>
+<span id="L224"><span class="lineNum">     224</span> <span class="tlaGNC">         574 :     while (*haystack != '\0' &amp;&amp; result == S21_NULL) {</span></span>
+<span id="L225"><span class="lineNum">     225</span> <span class="tlaGNC">         504 :       const char *p1 = haystack;</span></span>
+<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">         504 :       const char *p2 = needle;</span></span>
 <span id="L227"><span class="lineNum">     227</span>              : </span>
-<span id="L228"><span class="lineNum">     228</span>              : //       while (*p1 != '\0' &amp;&amp; *p2 != '\0' &amp;&amp; *p1 == *p2) {</span>
-<span id="L229"><span class="lineNum">     229</span>              : //         p1++;</span>
-<span id="L230"><span class="lineNum">     230</span>              : //         p2++;</span>
-<span id="L231"><span class="lineNum">     231</span>              : //       }</span>
+<span id="L228"><span class="lineNum">     228</span> <span class="tlaGNC">         721 :       while (*p1 != '\0' &amp;&amp; *p2 != '\0' &amp;&amp; *p1 == *p2) {</span></span>
+<span id="L229"><span class="lineNum">     229</span> <span class="tlaGNC">         217 :         p1++;</span></span>
+<span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">         217 :         p2++;</span></span>
+<span id="L231"><span class="lineNum">     231</span>              :       }</span>
 <span id="L232"><span class="lineNum">     232</span>              : </span>
-<span id="L233"><span class="lineNum">     233</span>              : //       if (*p2 == '\0') {</span>
-<span id="L234"><span class="lineNum">     234</span>              : //         result = (char *)haystack;</span>
-<span id="L235"><span class="lineNum">     235</span>              : //       }</span>
+<span id="L233"><span class="lineNum">     233</span> <span class="tlaGNC">         504 :       if (*p2 == '\0') {</span></span>
+<span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">          35 :         result = (char *)haystack;</span></span>
+<span id="L235"><span class="lineNum">     235</span>              :       }</span>
 <span id="L236"><span class="lineNum">     236</span>              : </span>
-<span id="L237"><span class="lineNum">     237</span>              : //       haystack++;</span>
-<span id="L238"><span class="lineNum">     238</span>              : //     }</span>
-<span id="L239"><span class="lineNum">     239</span>              : //   }</span>
+<span id="L237"><span class="lineNum">     237</span> <span class="tlaGNC">         504 :       haystack++;</span></span>
+<span id="L238"><span class="lineNum">     238</span>              :     }</span>
+<span id="L239"><span class="lineNum">     239</span>              :   }</span>
 <span id="L240"><span class="lineNum">     240</span>              : </span>
-<span id="L241"><span class="lineNum">     241</span>              : //   return result;</span>
-<span id="L242"><span class="lineNum">     242</span>              : // }</span>
-<span id="L243"><span class="lineNum">     243</span>              : // // ------------------------------------------------------------------------------------------------</span>
-<span id="L244"><span class="lineNum">     244</span>              : // char *s21_strtok(</span>
-<span id="L245"><span class="lineNum">     245</span>              : //     char *str,</span>
-<span id="L246"><span class="lineNum">     246</span>              : //     const char *delim) {  // Разбивает строку на токены по разделителям delim</span>
-<span id="L247"><span class="lineNum">     247</span>              : //   static char *last = S21_NULL;</span>
-<span id="L248"><span class="lineNum">     248</span>              : //   char *token_start = S21_NULL;</span>
+<span id="L241"><span class="lineNum">     241</span> <span class="tlaGNC">          91 :   return result;</span></span>
+<span id="L242"><span class="lineNum">     242</span>              : }</span>
+<span id="L243"><span class="lineNum">     243</span>              : // ------------------------------------------------------------------------------------------------</span>
+<span id="L244"><span class="lineNum">     244</span> <span class="tlaGNC">          42 : char *s21_strtok(</span></span>
+<span id="L245"><span class="lineNum">     245</span>              :     char *str,</span>
+<span id="L246"><span class="lineNum">     246</span>              :     const char *delim) {  // Разбивает строку на токены по разделителям delim</span>
+<span id="L247"><span class="lineNum">     247</span>              :   static char *last = S21_NULL;</span>
+<span id="L248"><span class="lineNum">     248</span> <span class="tlaGNC">          42 :   char *token_start = S21_NULL;</span></span>
 <span id="L249"><span class="lineNum">     249</span>              : </span>
-<span id="L250"><span class="lineNum">     250</span>              : //   if (str != S21_NULL) {</span>
-<span id="L251"><span class="lineNum">     251</span>              : //     last = str;</span>
-<span id="L252"><span class="lineNum">     252</span>              : //   }</span>
+<span id="L250"><span class="lineNum">     250</span> <span class="tlaGNC">          42 :   if (str != S21_NULL) {</span></span>
+<span id="L251"><span class="lineNum">     251</span> <span class="tlaGNC">          42 :     last = str;</span></span>
+<span id="L252"><span class="lineNum">     252</span>              :   }</span>
 <span id="L253"><span class="lineNum">     253</span>              : </span>
-<span id="L254"><span class="lineNum">     254</span>              : //   if (last != S21_NULL) {</span>
-<span id="L255"><span class="lineNum">     255</span>              : //     // Пропускаем начальные разделители</span>
-<span id="L256"><span class="lineNum">     256</span>              : //     while (*last != '\0' &amp;&amp; s21_strchr(delim, *last) != S21_NULL) {</span>
-<span id="L257"><span class="lineNum">     257</span>              : //       last++;</span>
-<span id="L258"><span class="lineNum">     258</span>              : //     }</span>
+<span id="L254"><span class="lineNum">     254</span> <span class="tlaGNC">          42 :   if (last != S21_NULL) {</span></span>
+<span id="L255"><span class="lineNum">     255</span>              :     // Пропускаем начальные разделители</span>
+<span id="L256"><span class="lineNum">     256</span> <span class="tlaGNC">          42 :     while (*last != '\0' &amp;&amp; s21_strchr(delim, *last) != S21_NULL) {</span></span>
+<span id="L257"><span class="lineNum">     257</span> <span class="tlaUNC tlaBgUNC">           0 :       last++;</span></span>
+<span id="L258"><span class="lineNum">     258</span>              :     }</span>
 <span id="L259"><span class="lineNum">     259</span>              : </span>
-<span id="L260"><span class="lineNum">     260</span>              : //     if (*last != '\0') {</span>
-<span id="L261"><span class="lineNum">     261</span>              : //       token_start = last;</span>
+<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC tlaBgGNC">          42 :     if (*last != '\0') {</span></span>
+<span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">          42 :       token_start = last;</span></span>
 <span id="L262"><span class="lineNum">     262</span>              : </span>
-<span id="L263"><span class="lineNum">     263</span>              : //       // Ищем следующий разделитель</span>
-<span id="L264"><span class="lineNum">     264</span>              : //       while (*last != '\0' &amp;&amp; s21_strchr(delim, *last) == S21_NULL) {</span>
-<span id="L265"><span class="lineNum">     265</span>              : //         last++;</span>
-<span id="L266"><span class="lineNum">     266</span>              : //       }</span>
+<span id="L263"><span class="lineNum">     263</span>              :       // Ищем следующий разделитель</span>
+<span id="L264"><span class="lineNum">     264</span> <span class="tlaGNC">         301 :       while (*last != '\0' &amp;&amp; s21_strchr(delim, *last) == S21_NULL) {</span></span>
+<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">         259 :         last++;</span></span>
+<span id="L266"><span class="lineNum">     266</span>              :       }</span>
 <span id="L267"><span class="lineNum">     267</span>              : </span>
-<span id="L268"><span class="lineNum">     268</span>              : //       if (*last != '\0') {</span>
-<span id="L269"><span class="lineNum">     269</span>              : //         *last = '\0';</span>
-<span id="L270"><span class="lineNum">     270</span>              : //         last++;</span>
-<span id="L271"><span class="lineNum">     271</span>              : //       } else {</span>
-<span id="L272"><span class="lineNum">     272</span>              : //         last = S21_NULL;</span>
-<span id="L273"><span class="lineNum">     273</span>              : //       }</span>
-<span id="L274"><span class="lineNum">     274</span>              : //     } else {</span>
-<span id="L275"><span class="lineNum">     275</span>              : //       last = S21_NULL;</span>
-<span id="L276"><span class="lineNum">     276</span>              : //     }</span>
-<span id="L277"><span class="lineNum">     277</span>              : //   }</span>
+<span id="L268"><span class="lineNum">     268</span> <span class="tlaGNC">          42 :       if (*last != '\0') {</span></span>
+<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">          28 :         *last = '\0';</span></span>
+<span id="L270"><span class="lineNum">     270</span>              :         // last++;</span>
+<span id="L271"><span class="lineNum">     271</span>              :       } else {</span>
+<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">          14 :         last = S21_NULL;</span></span>
+<span id="L273"><span class="lineNum">     273</span>              :       }</span>
+<span id="L274"><span class="lineNum">     274</span>              :     } else {</span>
+<span id="L275"><span class="lineNum">     275</span> <span class="tlaUNC tlaBgUNC">           0 :       last = S21_NULL;</span></span>
+<span id="L276"><span class="lineNum">     276</span>              :     }</span>
+<span id="L277"><span class="lineNum">     277</span>              :   }</span>
 <span id="L278"><span class="lineNum">     278</span>              : </span>
-<span id="L279"><span class="lineNum">     279</span>              : //   return token_start;</span>
-<span id="L280"><span class="lineNum">     280</span>              : // }</span>
-<span id="L281"><span class="lineNum">     281</span>              : // // ------------------------------------------------------------------------------------------------</span>
+<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC tlaBgGNC">          42 :   return token_start;</span></span>
+<span id="L280"><span class="lineNum">     280</span>              : }</span>
+<span id="L281"><span class="lineNum">     281</span>              : // ------------------------------------------------------------------------------------------------</span>
 <span id="L282"><span class="lineNum">     282</span>              : </span>
-<span id="L283"><span class="lineNum">     283</span>              : // static char s21_unknown_error[64] = {0};</span>
-<span id="L284"><span class="lineNum">     284</span>              : </span>
-<span id="L285"><span class="lineNum">     285</span>              : // char *s21_strerror(int errnum) {  // Возвращает строку с ошибкой errnum</span>
-<span id="L286"><span class="lineNum">     286</span>              : //   char *result = &quot;Unknown error&quot;;</span>
-<span id="L287"><span class="lineNum">     287</span>              : </span>
-<span id="L288"><span class="lineNum">     288</span>              : //   if (errnum &gt;= 0 &amp;&amp; errnum &lt;= (int)S21_MAX_ERRNO) {</span>
-<span id="L289"><span class="lineNum">     289</span>              : //     const char *msg = s21_error_messages[errnum];</span>
-<span id="L290"><span class="lineNum">     290</span>              : //     if (msg) {</span>
-<span id="L291"><span class="lineNum">     291</span>              : //       result = (char *)msg;</span>
-<span id="L292"><span class="lineNum">     292</span>              : //     }</span>
-<span id="L293"><span class="lineNum">     293</span>              : //   } else {</span>
-<span id="L294"><span class="lineNum">     294</span>              : //     snprintf(s21_unknown_error, sizeof(s21_unknown_error), &quot;Unknown error: %d&quot;,</span>
-<span id="L295"><span class="lineNum">     295</span>              : //              errnum);</span>
-<span id="L296"><span class="lineNum">     296</span>              : //     result = s21_unknown_error;</span>
-<span id="L297"><span class="lineNum">     297</span>              : //   }</span>
-<span id="L298"><span class="lineNum">     298</span>              : </span>
-<span id="L299"><span class="lineNum">     299</span>              : //   return result;</span>
-<span id="L300"><span class="lineNum">     300</span>              : // }</span>
+<span id="L283"><span class="lineNum">     283</span>              : // Массивы сообщений об ошибках для macOS и Linux</span>
+<span id="L284"><span class="lineNum">     284</span>              : #ifdef S21_MAC_OS</span>
+<span id="L285"><span class="lineNum">     285</span>              : static const char *s21_error_messages[] = {</span>
+<span id="L286"><span class="lineNum">     286</span>              :     [0] = &quot;Undefined error: 0&quot;,</span>
+<span id="L287"><span class="lineNum">     287</span>              :     [EPERM] = &quot;Operation not permitted&quot;,</span>
+<span id="L288"><span class="lineNum">     288</span>              :     [ENOENT] = &quot;No such file or directory&quot;,</span>
+<span id="L289"><span class="lineNum">     289</span>              :     [ESRCH] = &quot;No such process&quot;,</span>
+<span id="L290"><span class="lineNum">     290</span>              :     [EINTR] = &quot;Interrupted system call&quot;,</span>
+<span id="L291"><span class="lineNum">     291</span>              :     [EIO] = &quot;Input/output error&quot;,</span>
+<span id="L292"><span class="lineNum">     292</span>              :     [ENXIO] = &quot;Device not configured&quot;,</span>
+<span id="L293"><span class="lineNum">     293</span>              :     [E2BIG] = &quot;Argument list too long&quot;,</span>
+<span id="L294"><span class="lineNum">     294</span>              :     [ENOEXEC] = &quot;Exec format error&quot;,</span>
+<span id="L295"><span class="lineNum">     295</span>              :     [EBADF] = &quot;Bad file descriptor&quot;,</span>
+<span id="L296"><span class="lineNum">     296</span>              :     [ECHILD] = &quot;No child processes&quot;,</span>
+<span id="L297"><span class="lineNum">     297</span>              :     [EDEADLK] = &quot;Resource deadlock avoided&quot;,</span>
+<span id="L298"><span class="lineNum">     298</span>              :     [ENOMEM] = &quot;Cannot allocate memory&quot;,</span>
+<span id="L299"><span class="lineNum">     299</span>              :     [EACCES] = &quot;Permission denied&quot;,</span>
+<span id="L300"><span class="lineNum">     300</span>              :     [EFAULT] = &quot;Bad address&quot;,</span>
+<span id="L301"><span class="lineNum">     301</span>              :     [ENOTBLK] = &quot;Block device required&quot;,</span>
+<span id="L302"><span class="lineNum">     302</span>              :     [EBUSY] = &quot;Resource busy&quot;,</span>
+<span id="L303"><span class="lineNum">     303</span>              :     [EEXIST] = &quot;File exists&quot;,</span>
+<span id="L304"><span class="lineNum">     304</span>              :     [EXDEV] = &quot;Cross-device link&quot;,</span>
+<span id="L305"><span class="lineNum">     305</span>              :     [ENODEV] = &quot;Operation not supported by device&quot;,</span>
+<span id="L306"><span class="lineNum">     306</span>              :     [ENOTDIR] = &quot;Not a directory&quot;,</span>
+<span id="L307"><span class="lineNum">     307</span>              :     [EISDIR] = &quot;Is a directory&quot;,</span>
+<span id="L308"><span class="lineNum">     308</span>              :     [EINVAL] = &quot;Invalid argument&quot;,</span>
+<span id="L309"><span class="lineNum">     309</span>              :     [ENFILE] = &quot;Too many open files in system&quot;,</span>
+<span id="L310"><span class="lineNum">     310</span>              :     [EMFILE] = &quot;Too many open files&quot;,</span>
+<span id="L311"><span class="lineNum">     311</span>              :     [ENOTTY] = &quot;Inappropriate ioctl for device&quot;,</span>
+<span id="L312"><span class="lineNum">     312</span>              :     [ETXTBSY] = &quot;Text file busy&quot;,</span>
+<span id="L313"><span class="lineNum">     313</span>              :     [EFBIG] = &quot;File too large&quot;,</span>
+<span id="L314"><span class="lineNum">     314</span>              :     [ENOSPC] = &quot;No space left on device&quot;,</span>
+<span id="L315"><span class="lineNum">     315</span>              :     [ESPIPE] = &quot;Illegal seek&quot;,</span>
+<span id="L316"><span class="lineNum">     316</span>              :     [EROFS] = &quot;Read-only file system&quot;,</span>
+<span id="L317"><span class="lineNum">     317</span>              :     [EMLINK] = &quot;Too many links&quot;,</span>
+<span id="L318"><span class="lineNum">     318</span>              :     [EPIPE] = &quot;Broken pipe&quot;,</span>
+<span id="L319"><span class="lineNum">     319</span>              :     [EDOM] = &quot;Numerical argument out of domain&quot;,</span>
+<span id="L320"><span class="lineNum">     320</span>              :     [ERANGE] = &quot;Result too large&quot;,</span>
+<span id="L321"><span class="lineNum">     321</span>              :     [EAGAIN] = &quot;Resource temporarily unavailable&quot;,</span>
+<span id="L322"><span class="lineNum">     322</span>              :     [EINPROGRESS] = &quot;Operation now in progress&quot;,</span>
+<span id="L323"><span class="lineNum">     323</span>              :     [EALREADY] = &quot;Operation already in progress&quot;,</span>
+<span id="L324"><span class="lineNum">     324</span>              :     [ENOTSOCK] = &quot;Socket operation on non-socket&quot;,</span>
+<span id="L325"><span class="lineNum">     325</span>              :     [EDESTADDRREQ] = &quot;Destination address required&quot;,</span>
+<span id="L326"><span class="lineNum">     326</span>              :     [EMSGSIZE] = &quot;Message too long&quot;,</span>
+<span id="L327"><span class="lineNum">     327</span>              :     [EPROTOTYPE] = &quot;Protocol wrong type for socket&quot;,</span>
+<span id="L328"><span class="lineNum">     328</span>              :     [ENOPROTOOPT] = &quot;Protocol not available&quot;,</span>
+<span id="L329"><span class="lineNum">     329</span>              :     [EPROTONOSUPPORT] = &quot;Protocol not supported&quot;,</span>
+<span id="L330"><span class="lineNum">     330</span>              :     [ESOCKTNOSUPPORT] = &quot;Socket type not supported&quot;,</span>
+<span id="L331"><span class="lineNum">     331</span>              :     [ENOTSUP] = &quot;Operation not supported&quot;,</span>
+<span id="L332"><span class="lineNum">     332</span>              :     [EPFNOSUPPORT] = &quot;Protocol family not supported&quot;,</span>
+<span id="L333"><span class="lineNum">     333</span>              :     [EAFNOSUPPORT] = &quot;Address family not supported by protocol family&quot;,</span>
+<span id="L334"><span class="lineNum">     334</span>              :     [EADDRINUSE] = &quot;Address already in use&quot;,</span>
+<span id="L335"><span class="lineNum">     335</span>              :     [EADDRNOTAVAIL] = &quot;Can't assign requested address&quot;,</span>
+<span id="L336"><span class="lineNum">     336</span>              :     [ENETDOWN] = &quot;Network is down&quot;,</span>
+<span id="L337"><span class="lineNum">     337</span>              :     [ENETUNREACH] = &quot;Network is unreachable&quot;,</span>
+<span id="L338"><span class="lineNum">     338</span>              :     [ENETRESET] = &quot;Network dropped connection on reset&quot;,</span>
+<span id="L339"><span class="lineNum">     339</span>              :     [ECONNABORTED] = &quot;Software caused connection abort&quot;,</span>
+<span id="L340"><span class="lineNum">     340</span>              :     [ECONNRESET] = &quot;Connection reset by peer&quot;,</span>
+<span id="L341"><span class="lineNum">     341</span>              :     [ENOBUFS] = &quot;No buffer space available&quot;,</span>
+<span id="L342"><span class="lineNum">     342</span>              :     [EISCONN] = &quot;Socket is already connected&quot;,</span>
+<span id="L343"><span class="lineNum">     343</span>              :     [ENOTCONN] = &quot;Socket is not connected&quot;,</span>
+<span id="L344"><span class="lineNum">     344</span>              :     [ESHUTDOWN] = &quot;Can't send after socket shutdown&quot;,</span>
+<span id="L345"><span class="lineNum">     345</span>              :     [ETOOMANYREFS] = &quot;Too many references: can't splice&quot;,</span>
+<span id="L346"><span class="lineNum">     346</span>              :     [ETIMEDOUT] = &quot;Operation timed out&quot;,</span>
+<span id="L347"><span class="lineNum">     347</span>              :     [ECONNREFUSED] = &quot;Connection refused&quot;,</span>
+<span id="L348"><span class="lineNum">     348</span>              :     [ELOOP] = &quot;Too many levels of symbolic links&quot;,</span>
+<span id="L349"><span class="lineNum">     349</span>              :     [ENAMETOOLONG] = &quot;File name too long&quot;,</span>
+<span id="L350"><span class="lineNum">     350</span>              :     [EHOSTDOWN] = &quot;Host is down&quot;,</span>
+<span id="L351"><span class="lineNum">     351</span>              :     [EHOSTUNREACH] = &quot;No route to host&quot;,</span>
+<span id="L352"><span class="lineNum">     352</span>              :     [ENOTEMPTY] = &quot;Directory not empty&quot;,</span>
+<span id="L353"><span class="lineNum">     353</span>              :     [EPROCLIM] = &quot;Too many processes&quot;,</span>
+<span id="L354"><span class="lineNum">     354</span>              :     [EUSERS] = &quot;Too many users&quot;,</span>
+<span id="L355"><span class="lineNum">     355</span>              :     [EDQUOT] = &quot;Disk quota exceeded&quot;,</span>
+<span id="L356"><span class="lineNum">     356</span>              :     [ESTALE] = &quot;Stale NFS file handle&quot;,</span>
+<span id="L357"><span class="lineNum">     357</span>              :     [EREMOTE] = &quot;Too many levels of remote in path&quot;,</span>
+<span id="L358"><span class="lineNum">     358</span>              :     [EBADRPC] = &quot;RPC struct is bad&quot;,</span>
+<span id="L359"><span class="lineNum">     359</span>              :     [ERPCMISMATCH] = &quot;RPC version wrong&quot;,</span>
+<span id="L360"><span class="lineNum">     360</span>              :     [EPROGUNAVAIL] = &quot;RPC prog. not avail&quot;,</span>
+<span id="L361"><span class="lineNum">     361</span>              :     [EPROGMISMATCH] = &quot;Program version wrong&quot;,</span>
+<span id="L362"><span class="lineNum">     362</span>              :     [EPROCUNAVAIL] = &quot;Bad procedure for program&quot;,</span>
+<span id="L363"><span class="lineNum">     363</span>              :     [ENOLCK] = &quot;No locks available&quot;,</span>
+<span id="L364"><span class="lineNum">     364</span>              :     [ENOSYS] = &quot;Function not implemented&quot;,</span>
+<span id="L365"><span class="lineNum">     365</span>              :     [EFTYPE] = &quot;Inappropriate file type or format&quot;,</span>
+<span id="L366"><span class="lineNum">     366</span>              :     [EAUTH] = &quot;Authentication error&quot;,</span>
+<span id="L367"><span class="lineNum">     367</span>              :     [ENEEDAUTH] = &quot;Need authenticator&quot;,</span>
+<span id="L368"><span class="lineNum">     368</span>              :     [EPWROFF] = &quot;Device power is off&quot;,</span>
+<span id="L369"><span class="lineNum">     369</span>              :     [EDEVERR] = &quot;Device error&quot;,</span>
+<span id="L370"><span class="lineNum">     370</span>              :     [EOVERFLOW] = &quot;Value too large to be stored in data type&quot;,</span>
+<span id="L371"><span class="lineNum">     371</span>              :     [EBADEXEC] = &quot;Bad executable&quot;,</span>
+<span id="L372"><span class="lineNum">     372</span>              :     [EBADARCH] = &quot;Bad CPU type in executable&quot;,</span>
+<span id="L373"><span class="lineNum">     373</span>              :     [ESHLIBVERS] = &quot;Shared library version mismatch&quot;,</span>
+<span id="L374"><span class="lineNum">     374</span>              :     [EBADMACHO] = &quot;Malformed Macho file&quot;,</span>
+<span id="L375"><span class="lineNum">     375</span>              :     [ECANCELED] = &quot;Operation canceled&quot;,</span>
+<span id="L376"><span class="lineNum">     376</span>              :     [EIDRM] = &quot;Identifier removed&quot;,</span>
+<span id="L377"><span class="lineNum">     377</span>              :     [ENOMSG] = &quot;No message of desired type&quot;,</span>
+<span id="L378"><span class="lineNum">     378</span>              :     [EILSEQ] = &quot;Illegal byte sequence&quot;,</span>
+<span id="L379"><span class="lineNum">     379</span>              :     [ENOATTR] = &quot;Attribute not found&quot;,</span>
+<span id="L380"><span class="lineNum">     380</span>              :     [EBADMSG] = &quot;Bad message&quot;,</span>
+<span id="L381"><span class="lineNum">     381</span>              :     [EMULTIHOP] = &quot;Reserved&quot;,</span>
+<span id="L382"><span class="lineNum">     382</span>              :     [ENODATA] = &quot;No message available on STREAM&quot;,</span>
+<span id="L383"><span class="lineNum">     383</span>              :     [ENOLINK] = &quot;Reserved&quot;,</span>
+<span id="L384"><span class="lineNum">     384</span>              :     [ENOSR] = &quot;No STREAM resources&quot;,</span>
+<span id="L385"><span class="lineNum">     385</span>              :     [ENOSTR] = &quot;Not a STREAM&quot;,</span>
+<span id="L386"><span class="lineNum">     386</span>              :     [EPROTO] = &quot;Protocol error&quot;,</span>
+<span id="L387"><span class="lineNum">     387</span>              :     [ETIME] = &quot;STREAM ioctl timeout&quot;,</span>
+<span id="L388"><span class="lineNum">     388</span>              :     [EOPNOTSUPP] = &quot;Operation not supported on socket&quot;,</span>
+<span id="L389"><span class="lineNum">     389</span>              :     [ENOPOLICY] = &quot;No such policy registered&quot;,</span>
+<span id="L390"><span class="lineNum">     390</span>              : };</span>
+<span id="L391"><span class="lineNum">     391</span>              : #elif defined(S21_LINUX)</span>
+<span id="L392"><span class="lineNum">     392</span>              : static const char *s21_error_messages[] = {</span>
+<span id="L393"><span class="lineNum">     393</span>              :     [0] = &quot;Success&quot;,</span>
+<span id="L394"><span class="lineNum">     394</span>              :     [EPERM] = &quot;Operation not permitted&quot;,</span>
+<span id="L395"><span class="lineNum">     395</span>              :     [ENOENT] = &quot;No such file or directory&quot;,</span>
+<span id="L396"><span class="lineNum">     396</span>              :     [ESRCH] = &quot;No such process&quot;,</span>
+<span id="L397"><span class="lineNum">     397</span>              :     [EINTR] = &quot;Interrupted system call&quot;,</span>
+<span id="L398"><span class="lineNum">     398</span>              :     [EIO] = &quot;Input/output error&quot;,</span>
+<span id="L399"><span class="lineNum">     399</span>              :     [ENXIO] = &quot;No such device or address&quot;,</span>
+<span id="L400"><span class="lineNum">     400</span>              :     [E2BIG] = &quot;Argument list too long&quot;,</span>
+<span id="L401"><span class="lineNum">     401</span>              :     [ENOEXEC] = &quot;Exec format error&quot;,</span>
+<span id="L402"><span class="lineNum">     402</span>              :     [EBADF] = &quot;Bad file descriptor&quot;,</span>
+<span id="L403"><span class="lineNum">     403</span>              :     [ECHILD] = &quot;No child processes&quot;,</span>
+<span id="L404"><span class="lineNum">     404</span>              :     [EAGAIN] = &quot;Resource temporarily unavailable&quot;,</span>
+<span id="L405"><span class="lineNum">     405</span>              :     [ENOMEM] = &quot;Cannot allocate memory&quot;,</span>
+<span id="L406"><span class="lineNum">     406</span>              :     [EACCES] = &quot;Permission denied&quot;,</span>
+<span id="L407"><span class="lineNum">     407</span>              :     [EFAULT] = &quot;Bad address&quot;,</span>
+<span id="L408"><span class="lineNum">     408</span>              :     [ENOTBLK] = &quot;Block device required&quot;,</span>
+<span id="L409"><span class="lineNum">     409</span>              :     [EBUSY] = &quot;Device or resource busy&quot;,</span>
+<span id="L410"><span class="lineNum">     410</span>              :     [EEXIST] = &quot;File exists&quot;,</span>
+<span id="L411"><span class="lineNum">     411</span>              :     [EXDEV] = &quot;Invalid cross-device link&quot;,</span>
+<span id="L412"><span class="lineNum">     412</span>              :     [ENODEV] = &quot;No such device&quot;,</span>
+<span id="L413"><span class="lineNum">     413</span>              :     [ENOTDIR] = &quot;Not a directory&quot;,</span>
+<span id="L414"><span class="lineNum">     414</span>              :     [EISDIR] = &quot;Is a directory&quot;,</span>
+<span id="L415"><span class="lineNum">     415</span>              :     [EINVAL] = &quot;Invalid argument&quot;,</span>
+<span id="L416"><span class="lineNum">     416</span>              :     [ENFILE] = &quot;Too many open files in system&quot;,</span>
+<span id="L417"><span class="lineNum">     417</span>              :     [EMFILE] = &quot;Too many open files&quot;,</span>
+<span id="L418"><span class="lineNum">     418</span>              :     [ENOTTY] = &quot;Inappropriate ioctl for device&quot;,</span>
+<span id="L419"><span class="lineNum">     419</span>              :     [ETXTBSY] = &quot;Text file busy&quot;,</span>
+<span id="L420"><span class="lineNum">     420</span>              :     [EFBIG] = &quot;File too large&quot;,</span>
+<span id="L421"><span class="lineNum">     421</span>              :     [ENOSPC] = &quot;No space left on device&quot;,</span>
+<span id="L422"><span class="lineNum">     422</span>              :     [ESPIPE] = &quot;Illegal seek&quot;,</span>
+<span id="L423"><span class="lineNum">     423</span>              :     [EROFS] = &quot;Read-only file system&quot;,</span>
+<span id="L424"><span class="lineNum">     424</span>              :     [EMLINK] = &quot;Too many links&quot;,</span>
+<span id="L425"><span class="lineNum">     425</span>              :     [EPIPE] = &quot;Broken pipe&quot;,</span>
+<span id="L426"><span class="lineNum">     426</span>              :     [EDOM] = &quot;Numerical argument out of domain&quot;,</span>
+<span id="L427"><span class="lineNum">     427</span>              :     [ERANGE] = &quot;Numerical result out of range&quot;,</span>
+<span id="L428"><span class="lineNum">     428</span>              :     [EDEADLK] = &quot;Resource deadlock avoided&quot;,</span>
+<span id="L429"><span class="lineNum">     429</span>              :     [ENAMETOOLONG] = &quot;File name too long&quot;,</span>
+<span id="L430"><span class="lineNum">     430</span>              :     [ENOLCK] = &quot;No locks available&quot;,</span>
+<span id="L431"><span class="lineNum">     431</span>              :     [ENOSYS] = &quot;Function not implemented&quot;,</span>
+<span id="L432"><span class="lineNum">     432</span>              :     [ENOTEMPTY] = &quot;Directory not empty&quot;,</span>
+<span id="L433"><span class="lineNum">     433</span>              :     [ELOOP] = &quot;Too many levels of symbolic links&quot;,</span>
+<span id="L434"><span class="lineNum">     434</span>              :     [ENOMSG] = &quot;No message of desired type&quot;,</span>
+<span id="L435"><span class="lineNum">     435</span>              :     [EIDRM] = &quot;Identifier removed&quot;,</span>
+<span id="L436"><span class="lineNum">     436</span>              :     [ECHRNG] = &quot;Channel number out of range&quot;,</span>
+<span id="L437"><span class="lineNum">     437</span>              :     [EL2NSYNC] = &quot;Level 2 not synchronized&quot;,</span>
+<span id="L438"><span class="lineNum">     438</span>              :     [EL3HLT] = &quot;Level 3 halted&quot;,</span>
+<span id="L439"><span class="lineNum">     439</span>              :     [EL3RST] = &quot;Level 3 reset&quot;,</span>
+<span id="L440"><span class="lineNum">     440</span>              :     [ELNRNG] = &quot;Link number out of range&quot;,</span>
+<span id="L441"><span class="lineNum">     441</span>              :     [EUNATCH] = &quot;Protocol driver not attached&quot;,</span>
+<span id="L442"><span class="lineNum">     442</span>              :     [ENOCSI] = &quot;No CSI structure available&quot;,</span>
+<span id="L443"><span class="lineNum">     443</span>              :     [EL2HLT] = &quot;Level 2 halted&quot;,</span>
+<span id="L444"><span class="lineNum">     444</span>              :     [EBADE] = &quot;Invalid exchange&quot;,</span>
+<span id="L445"><span class="lineNum">     445</span>              :     [EBADR] = &quot;Invalid request descriptor&quot;,</span>
+<span id="L446"><span class="lineNum">     446</span>              :     [EXFULL] = &quot;Exchange full&quot;,</span>
+<span id="L447"><span class="lineNum">     447</span>              :     [ENOANO] = &quot;No anode&quot;,</span>
+<span id="L448"><span class="lineNum">     448</span>              :     [EBADRQC] = &quot;Invalid request code&quot;,</span>
+<span id="L449"><span class="lineNum">     449</span>              :     [EBADSLT] = &quot;Invalid slot&quot;,</span>
+<span id="L450"><span class="lineNum">     450</span>              :     // [EDEADLOCK] = &quot;Resource deadlock avoided&quot;,</span>
+<span id="L451"><span class="lineNum">     451</span>              :     [EBFONT] = &quot;Bad font file format&quot;,</span>
+<span id="L452"><span class="lineNum">     452</span>              :     [ENOSTR] = &quot;Device not a stream&quot;,</span>
+<span id="L453"><span class="lineNum">     453</span>              :     [ENODATA] = &quot;No data available&quot;,</span>
+<span id="L454"><span class="lineNum">     454</span>              :     [ETIME] = &quot;Timer expired&quot;,</span>
+<span id="L455"><span class="lineNum">     455</span>              :     [ENOSR] = &quot;Out of streams resources&quot;,</span>
+<span id="L456"><span class="lineNum">     456</span>              :     [ENONET] = &quot;Machine is not on the network&quot;,</span>
+<span id="L457"><span class="lineNum">     457</span>              :     [ENOPKG] = &quot;Package not installed&quot;,</span>
+<span id="L458"><span class="lineNum">     458</span>              :     [EREMOTE] = &quot;Object is remote&quot;,</span>
+<span id="L459"><span class="lineNum">     459</span>              :     [ENOLINK] = &quot;Link has been severed&quot;,</span>
+<span id="L460"><span class="lineNum">     460</span>              :     [EADV] = &quot;Advertise error&quot;,</span>
+<span id="L461"><span class="lineNum">     461</span>              :     [ESRMNT] = &quot;Srmount error&quot;,</span>
+<span id="L462"><span class="lineNum">     462</span>              :     [ECOMM] = &quot;Communication error on send&quot;,</span>
+<span id="L463"><span class="lineNum">     463</span>              :     [EPROTO] = &quot;Protocol error&quot;,</span>
+<span id="L464"><span class="lineNum">     464</span>              :     [EMULTIHOP] = &quot;Multihop attempted&quot;,</span>
+<span id="L465"><span class="lineNum">     465</span>              :     [EDOTDOT] = &quot;RFS specific error&quot;,</span>
+<span id="L466"><span class="lineNum">     466</span>              :     [EBADMSG] = &quot;Bad message&quot;,</span>
+<span id="L467"><span class="lineNum">     467</span>              :     [EOVERFLOW] = &quot;Value too large for defined data type&quot;,</span>
+<span id="L468"><span class="lineNum">     468</span>              :     [ENOTUNIQ] = &quot;Name not unique on network&quot;,</span>
+<span id="L469"><span class="lineNum">     469</span>              :     [EBADFD] = &quot;File descriptor in bad state&quot;,</span>
+<span id="L470"><span class="lineNum">     470</span>              :     [EREMCHG] = &quot;Remote address changed&quot;,</span>
+<span id="L471"><span class="lineNum">     471</span>              :     [ELIBACC] = &quot;Can not access a needed shared library&quot;,</span>
+<span id="L472"><span class="lineNum">     472</span>              :     [ELIBBAD] = &quot;Accessing a corrupted shared library&quot;,</span>
+<span id="L473"><span class="lineNum">     473</span>              :     [ELIBSCN] = &quot;.lib section in a.out corrupted&quot;,</span>
+<span id="L474"><span class="lineNum">     474</span>              :     [ELIBMAX] = &quot;Attempting to link in too many shared libraries&quot;,</span>
+<span id="L475"><span class="lineNum">     475</span>              :     [ELIBEXEC] = &quot;Cannot exec a shared library directly&quot;,</span>
+<span id="L476"><span class="lineNum">     476</span>              :     [EILSEQ] = &quot;Invalid or incomplete multibyte or wide character&quot;,</span>
+<span id="L477"><span class="lineNum">     477</span>              :     [ERESTART] = &quot;Interrupted system call should be restarted&quot;,</span>
+<span id="L478"><span class="lineNum">     478</span>              :     [ESTRPIPE] = &quot;Streams pipe error&quot;,</span>
+<span id="L479"><span class="lineNum">     479</span>              :     [EUSERS] = &quot;Too many users&quot;,</span>
+<span id="L480"><span class="lineNum">     480</span>              :     [ENOTSOCK] = &quot;Socket operation on non-socket&quot;,</span>
+<span id="L481"><span class="lineNum">     481</span>              :     [EDESTADDRREQ] = &quot;Destination address required&quot;,</span>
+<span id="L482"><span class="lineNum">     482</span>              :     [EMSGSIZE] = &quot;Message too long&quot;,</span>
+<span id="L483"><span class="lineNum">     483</span>              :     [EPROTOTYPE] = &quot;Protocol wrong type for socket&quot;,</span>
+<span id="L484"><span class="lineNum">     484</span>              :     [ENOPROTOOPT] = &quot;Protocol not available&quot;,</span>
+<span id="L485"><span class="lineNum">     485</span>              :     [EPROTONOSUPPORT] = &quot;Protocol not supported&quot;,</span>
+<span id="L486"><span class="lineNum">     486</span>              :     [ESOCKTNOSUPPORT] = &quot;Socket type not supported&quot;,</span>
+<span id="L487"><span class="lineNum">     487</span>              :     [EOPNOTSUPP] = &quot;Operation not supported&quot;,</span>
+<span id="L488"><span class="lineNum">     488</span>              :     [EPFNOSUPPORT] = &quot;Protocol family not supported&quot;,</span>
+<span id="L489"><span class="lineNum">     489</span>              :     [EAFNOSUPPORT] = &quot;Address family not supported by protocol&quot;,</span>
+<span id="L490"><span class="lineNum">     490</span>              :     [EADDRINUSE] = &quot;Address already in use&quot;,</span>
+<span id="L491"><span class="lineNum">     491</span>              :     [EADDRNOTAVAIL] = &quot;Cannot assign requested address&quot;,</span>
+<span id="L492"><span class="lineNum">     492</span>              :     [ENETDOWN] = &quot;Network is down&quot;,</span>
+<span id="L493"><span class="lineNum">     493</span>              :     [ENETUNREACH] = &quot;Network is unreachable&quot;,</span>
+<span id="L494"><span class="lineNum">     494</span>              :     [ENETRESET] = &quot;Network dropped connection on reset&quot;,</span>
+<span id="L495"><span class="lineNum">     495</span>              :     [ECONNABORTED] = &quot;Software caused connection abort&quot;,</span>
+<span id="L496"><span class="lineNum">     496</span>              :     [ECONNRESET] = &quot;Connection reset by peer&quot;,</span>
+<span id="L497"><span class="lineNum">     497</span>              :     [ENOBUFS] = &quot;No buffer space available&quot;,</span>
+<span id="L498"><span class="lineNum">     498</span>              :     [EISCONN] = &quot;Transport endpoint is already connected&quot;,</span>
+<span id="L499"><span class="lineNum">     499</span>              :     [ENOTCONN] = &quot;Transport endpoint is not connected&quot;,</span>
+<span id="L500"><span class="lineNum">     500</span>              :     [ESHUTDOWN] = &quot;Cannot send after transport endpoint shutdown&quot;,</span>
+<span id="L501"><span class="lineNum">     501</span>              :     [ETOOMANYREFS] = &quot;Too many references: cannot splice&quot;,</span>
+<span id="L502"><span class="lineNum">     502</span>              :     [ETIMEDOUT] = &quot;Connection timed out&quot;,</span>
+<span id="L503"><span class="lineNum">     503</span>              :     [ECONNREFUSED] = &quot;Connection refused&quot;,</span>
+<span id="L504"><span class="lineNum">     504</span>              :     [EHOSTDOWN] = &quot;Host is down&quot;,</span>
+<span id="L505"><span class="lineNum">     505</span>              :     [EHOSTUNREACH] = &quot;No route to host&quot;,</span>
+<span id="L506"><span class="lineNum">     506</span>              :     [EALREADY] = &quot;Operation already in progress&quot;,</span>
+<span id="L507"><span class="lineNum">     507</span>              :     [EINPROGRESS] = &quot;Operation now in progress&quot;,</span>
+<span id="L508"><span class="lineNum">     508</span>              :     [ESTALE] = &quot;Stale file handle&quot;,</span>
+<span id="L509"><span class="lineNum">     509</span>              :     [EUCLEAN] = &quot;Structure needs cleaning&quot;,</span>
+<span id="L510"><span class="lineNum">     510</span>              :     [ENOTNAM] = &quot;Not a XENIX named type file&quot;,</span>
+<span id="L511"><span class="lineNum">     511</span>              :     [ENAVAIL] = &quot;No XENIX semaphores available&quot;,</span>
+<span id="L512"><span class="lineNum">     512</span>              :     [EISNAM] = &quot;Is a named type file&quot;,</span>
+<span id="L513"><span class="lineNum">     513</span>              :     [EREMOTEIO] = &quot;Remote I/O error&quot;,</span>
+<span id="L514"><span class="lineNum">     514</span>              :     [EDQUOT] = &quot;Disk quota exceeded&quot;,</span>
+<span id="L515"><span class="lineNum">     515</span>              :     [ENOMEDIUM] = &quot;No medium found&quot;,</span>
+<span id="L516"><span class="lineNum">     516</span>              :     [EMEDIUMTYPE] = &quot;Wrong medium type&quot;,</span>
+<span id="L517"><span class="lineNum">     517</span>              :     [ECANCELED] = &quot;Operation canceled&quot;,</span>
+<span id="L518"><span class="lineNum">     518</span>              :     [ENOKEY] = &quot;Required key not available&quot;,</span>
+<span id="L519"><span class="lineNum">     519</span>              :     [EKEYEXPIRED] = &quot;Key has expired&quot;,</span>
+<span id="L520"><span class="lineNum">     520</span>              :     [EKEYREVOKED] = &quot;Key has been revoked&quot;,</span>
+<span id="L521"><span class="lineNum">     521</span>              :     [EKEYREJECTED] = &quot;Key was rejected by service&quot;,</span>
+<span id="L522"><span class="lineNum">     522</span>              :     [EOWNERDEAD] = &quot;Owner died&quot;,</span>
+<span id="L523"><span class="lineNum">     523</span>              :     [ENOTRECOVERABLE] = &quot;State not recoverable&quot;,</span>
+<span id="L524"><span class="lineNum">     524</span>              :     [ERFKILL] = &quot;Operation not possible due to RF-kill&quot;,</span>
+<span id="L525"><span class="lineNum">     525</span>              :     [EHWPOISON] = &quot;Memory page has hardware error&quot;,</span>
+<span id="L526"><span class="lineNum">     526</span>              : };</span>
+<span id="L527"><span class="lineNum">     527</span>              : #endif</span>
+<span id="L528"><span class="lineNum">     528</span>              : </span>
+<span id="L529"><span class="lineNum">     529</span>              : // Максимальное количество ошибок</span>
+<span id="L530"><span class="lineNum">     530</span>              : #define S21_MAX_ERRNO \</span>
+<span id="L531"><span class="lineNum">     531</span>              :   (sizeof(s21_error_messages) / sizeof(s21_error_messages[0]) - 1)</span>
+<span id="L532"><span class="lineNum">     532</span>              : </span>
+<span id="L533"><span class="lineNum">     533</span>              : static char s21_unknown_error[64] = {0};</span>
+<span id="L534"><span class="lineNum">     534</span>              : </span>
+<span id="L535"><span class="lineNum">     535</span> <span class="tlaGNC">          21 : char *s21_strerror(int errnum) {  // Возвращает строку с ошибкой errnum</span></span>
+<span id="L536"><span class="lineNum">     536</span> <span class="tlaGNC">          21 :   char *result = &quot;Unknown error&quot;;</span></span>
+<span id="L537"><span class="lineNum">     537</span>              :   </span>
+<span id="L538"><span class="lineNum">     538</span> <span class="tlaGNC">          35 :   if (errnum &gt;= 0 &amp;&amp; errnum &lt;= (int)S21_MAX_ERRNO) {</span></span>
+<span id="L539"><span class="lineNum">     539</span> <span class="tlaGNC">          14 :     const char *msg = s21_error_messages[errnum];</span></span>
+<span id="L540"><span class="lineNum">     540</span> <span class="tlaGNC">          14 :     if (msg) {</span></span>
+<span id="L541"><span class="lineNum">     541</span> <span class="tlaGNC">          14 :       result = (char *)msg;</span></span>
+<span id="L542"><span class="lineNum">     542</span>              :     }</span>
+<span id="L543"><span class="lineNum">     543</span>              :   } else {</span>
+<span id="L544"><span class="lineNum">     544</span>              :     // snprintf(s21_unknown_error, sizeof(s21_unknown_error), &quot;Unknown error: %d&quot;,</span>
+<span id="L545"><span class="lineNum">     545</span> <span class="tlaGNC">           7 :     snprintf(s21_unknown_error, sizeof(s21_unknown_error), &quot;Unknown error %d&quot;,</span></span>
+<span id="L546"><span class="lineNum">     546</span>              :              errnum);</span>
+<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">           7 :     result = s21_unknown_error;</span></span>
+<span id="L548"><span class="lineNum">     548</span>              :   }</span>
+<span id="L549"><span class="lineNum">     549</span>              : </span>
+<span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">          21 :   return result;</span></span>
+<span id="L551"><span class="lineNum">     551</span>              : }</span>
         </pre>
               </td>
             </tr>
